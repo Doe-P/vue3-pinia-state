@@ -8,6 +8,7 @@
  </div>
 </template>
 <script setup>
+import { onMounted } from "vue";
 import InputTodo from "./components/InputTodo.vue";
 import TodoListItems from "./components/TodoListItems.vue";
 import {useTodoStore} from "./store/useTodoStore"
@@ -18,4 +19,7 @@ const handleUpdate = (id, status) => {
 const handleRemove = (id) => {
   todoStore.remove(id);
 };
+onMounted( async () => {
+  await todoStore.fetchTodos();
+})
 </script>

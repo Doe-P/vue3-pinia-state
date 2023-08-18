@@ -29,6 +29,10 @@ export const useTodoStore = defineStore('todo', {
         error: false,
     }),
     actions:{
+       async fetchTodos(){
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+            console.log(response.json());
+        },
         add(){
             if(!this.todoMessage) return this.error = true;
             const todoData = {
