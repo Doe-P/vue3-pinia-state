@@ -8,5 +8,6 @@
 </template>
 <script setup>
 import { useTodoStore } from "../store/useTodoStore";
-const todoStore = useTodoStore();
+import { useTodoStoreV2 } from "../store/useTodoStoreV2";
+const todoStore = useTodoStoreV2();
 </script>

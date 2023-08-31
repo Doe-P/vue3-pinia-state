@@ -8,7 +8,7 @@ export const useTodoStore = defineStore('todo', {
                 "title": "Finish homework",
                 "complete": false,
                 "createdAt": new Date(),
-                "updatedAt": new Date()
+                "updatedAt": new Date(),
               },
               {
                 "id": uuid(),

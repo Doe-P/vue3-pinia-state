@@ -12,7 +12,9 @@ import { onMounted } from "vue";
 import InputTodo from "./components/InputTodo.vue";
 import TodoListItems from "./components/TodoListItems.vue";
 import {useTodoStore} from "./store/useTodoStore"
-const todoStore = useTodoStore();
+import { useTodoStoreV2 } from "./store/useTodoStoreV2";
+ //const todoStore = useTodoStore();
+const todoStore = useTodoStoreV2();
 const handleUpdate = (id, status) => {
   todoStore.update(id, !status);
 }
@@ -20,6 +22,6 @@ const handleRemove = (id) => {
   todoStore.remove(id);
 };
 onMounted( async () => {
-  await todoStore.fetchTodos();
+  await todoStore.getAllTodos();
 })
 </script>
